@@ -1,0 +1,15 @@
+#mainlayout {
+    display: none;
+}
+
+#submitbtn {
+    display: none;
+}
+
+#timer {
+    display: none;
+}
+
+#countdown {
+    display: inline;
+}

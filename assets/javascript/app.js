@@ -1,3 +1,6 @@
+var rightAnswer = 0
+var wrongAnswer = 0
+var unanswered = 0
 var questionsBank = [
 { 
     question: "T’Challa has a PhD in physics from what institution of higher education?",
@@ -119,7 +122,73 @@ var questionsBank = [
 }
 ]
 
-for (let i = 0; i < questionsBank.length; i++) {
-    $("#answers").html(questionsBank[i].answers);
-    $("#questions").append(questionsBank[i].question + "<br><br>");
+function renderQuestions(){
+    for (let i = 0; i < questionsBank.length; i++) {
+        renderSingleQ(questionsBank[i]);
+    }
 }
+
+function renderSingleQ(questionsBank){
+    var div = $("#mainlayout");
+    var p = $("<h4>").text(questionsBank.question);
+    div.append(p);
+    var form = $("<form>")
+    div.append(form);
+    $.each(questionsBank.answers, function(){
+        var choice = $("<input>").html(questionsBank.answers.a);
+            choice.attr("type", "radio");
+            choice.attr("name", "1")
+            choice.attr("value", questionsBank.answers)
+            form.append(choice);
+    });
+}
+
+var countdown = 76;
+    var countId = setInterval(function(){
+    countdown--;
+    $("#countdown").html(countdown);
+    if(countdown <= 0){
+        clearInterval(countId);
+        checkAnswers();
+    }
+    },1000 );
+
+document.getElementById("startbtn").addEventListener("click", quizstart);
+function quizstart(){
+    console.log("you did it");
+    
+    $("#startscreen").css("display", "none");
+    $("#timer").css("display", "block");
+    $("#mainlayout").css("display", "block");
+    $("#submitbtn").css("display", "block");
+    renderQuestions();
+}
+
+function checkAnswers() {
+    // if(document.getElementById("Oxford").checked) {
+    //     rightAnswer++;
+    //     console.log(rightAnswer);
+    // }
+    // else if (document.getElementById("Wrong"||"Wrong1"||"Wrong2").checked) {
+    //     wrongAnswer++;
+    //     console.log(wrongAnswer);
+    // }
+    // else {
+    //     unanswered++;
+    //     console.log(unanswered);
+    // }
+    
+    $("#R").html("Correct Answers: " + rightAnswer);
+    $("#W").html("Incorrect Answers: " + wrongAnswer);
+    $("#U").html("Unanswered Questions: " + unanswered);
+    $("#timer").css("display", "none");
+    $("#mainlayout").css("display", "none");
+    $("#submitbtn").css("display", "none");
+    
+    
+}
+document.getElementById("submitbtn").addEventListener("click", checkAnswers);   
+// for (let i = 0; i < questionsBank.length; i++) {
+//     $("#answers").html(questionsBank[i].answers);
+//     $("#questions").append(questionsBank[i].question + "<br><br>");
+// }

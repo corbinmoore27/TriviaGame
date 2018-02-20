@@ -1,18 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trivia Game</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
+
 <body>
-    <form></form>
-    <div id="questions"></div>
-    <div id="answers"></div>
+    <div id="results">
+        <div id="R"></div>
+        <div id="W"></div>
+        <div id="U"></div>
+    </div>
+    <div id="startscreen">
+        <h2>You'll have 75 seconds to complete the quiz. <br><br>Press the "Start" button to continue</h2>
+        <button id="startbtn">Start</button>
+    </div>
+    <h2 id="timer"><div id="countdown"></div> seconds remain in for this quiz.</h2>
+    <div id="mainlayout">
+        <!-- <h4>T’Challa has a PhD in physics from what institution of higher education?</h4>
+        <form>
+            <input type="radio" name="1" id="Wrong">New York University
+            <br>
+            <input type="radio" name="1" id="Wrong">Cambridge University
+            <br>
+            <input type="radio" name="1" id="Oxford">Oxford University
+            <br>
+            <input type="radio" name="1" id="Wrong">Harvard University
+        </form>
+        <h4>Who killed T’Challa’s father King T’Chaka?</h4>
+        <form>
+            <input type="radio" name="2" id="Ulysses" value="">Ulysses Klaw
+            <br>
+            <input type="radio" name="2" id="Wrong" value="">The Red Skull
+            <br>
+            <input type="radio" name="2" id="Wrong" value="">The White Wolf
+            <br>
+            <input type="radio" name="2" id="Wrong" value="">Hilter
+        </form> -->
+</div>
+<button id="submitbtn">Submit</button>
     <script src="assets/javascript/app.js"></script>
 </body>
+
 </html>
