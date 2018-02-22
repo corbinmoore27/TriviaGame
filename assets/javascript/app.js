@@ -168,7 +168,7 @@ function checkAnswers() {
     //     rightAnswer++;
     //     console.log(rightAnswer);
     // }
-    // else if (document.getElementById("Wrong"||"Wrong1"||"Wrong2").checked) {
+    // else if (document.getElementById("Wrong").checked) {
     //     wrongAnswer++;
     //     console.log(wrongAnswer);
     // }
@@ -187,7 +187,3 @@ function checkAnswers() {
     
 }
 document.getElementById("submitbtn").addEventListener("click", checkAnswers);   
-// for (let i = 0; i < questionsBank.length; i++) {
-//     $("#answers").html(questionsBank[i].answers);
-//     $("#questions").append(questionsBank[i].question + "<br><br>");
-// }
