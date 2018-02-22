@@ -143,7 +143,9 @@ function renderSingleQ(questionsBank){
     });
 }
 
-var countdown = 76;
+document.getElementById("startbtn").addEventListener("click", quizstart);
+function quizstart(){
+    var countdown = 76;
     var countId = setInterval(function(){
     countdown--;
     $("#countdown").html(countdown);
@@ -152,16 +154,13 @@ var countdown = 76;
         checkAnswers();
     }
     },1000 );
-
-document.getElementById("startbtn").addEventListener("click", quizstart);
-function quizstart(){
-    console.log("you did it");
     
     $("#startscreen").css("display", "none");
     $("#timer").css("display", "block");
     $("#mainlayout").css("display", "block");
     $("#submitbtn").css("display", "block");
     renderQuestions();
+    
 }
 
 function checkAnswers() {
